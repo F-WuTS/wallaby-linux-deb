@@ -9,4 +9,4 @@ cd wallaby-linux
 # Remove .git folder to prevent dirty kernel names
 [[ -d build ]] || rm -rf .git
 
-KBUILD_DEBARCH=armhf make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- deb-pkg -j8
+KCFLAGS="-fno-pie -fno-pic" KBUILD_DEBARCH=armhf make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- deb-pkg -j8
